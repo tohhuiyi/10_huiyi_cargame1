@@ -3,13 +3,63 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Car Dealer</title>
-	<link rel="stylesheet" href="dealer.css" type="text/css" />
-	<script type="text/javascript" language="javascript" src="jquery/js/jquery-1.8.3.js"></script>
-	<script type="text/javascript" language="javascript" src="jquery/js/jquery-ui-1.9.2.custom.js"></script>
-    <script type="text/javascript" language="javascript" src="dealer.js"></script>
+	<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="dealer.css" type="text/css"/>
+	<link rel="stylesheet" href="style/jquery.fancybox.css" type="text/css"/>
+	<script type="text/javascript" language="javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" language="javascript" src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" language="javascript" src="scripts/jquery.fancybox.js"/>
+    <script type="text/javascript" language="javascript" src="dealer.js"/></script>
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Car Dealer</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#" onclick="showPage('splash')">Play</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#" onclick="showPage('splash')">About</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#" onclick="showPage('splash')">Credits</a>
+		  </li>
+		   <li class="nav-item">
+			<a class="nav-link" href="#">Help</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	<div id="app">
+		<div class="page-panel" id="splash">
+			<div id ="logo">
+				Your Logo
+			</div>
+			<div class="game-button" onclick="showPage('play')">
+				START GAME
+			</div>
+		</div>
+		<div class="page-panel" id="play">S
+			<div id ="salon">
+			<div id="dialog" style="display:none">	
+				</div>
+			</div>
+		</div>
+		<div class="page-panel" id="about">
+			About Page
+		</div>
+		<div class="page-panel" id="credits">
+			Credit Page
+		</div>
+	</div>
 	<div id="salon">
     	<div id="clients_queue">
         	<h4>clients queue</h4>

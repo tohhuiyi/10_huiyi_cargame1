@@ -99,8 +99,8 @@ function makeCarBoxesDroppable(brand) {
 									$dragBox.addClass('selected');	
 					         };  
 		
-		function removeBox(element,moveTopTop,) {
-		
+		function removeBox(element,moveToTop,) {
+			element.css("z-index 3000");
 			var option = {top:moveToTop,};
 			element.animate(option)
 					.fadeOut(function() {
@@ -149,7 +149,7 @@ function showCashierDialog(dragClient) {
 									cars_sold += 1;
 									amount += calcost(dragClient);
 									update();
-									removeBox(dragClient, -120);
+									removeBox(dragClient, -235);
 									$( this ).dialog( "close" );
 								},
 								"No and Exit": function() {
@@ -199,8 +199,30 @@ $(
 		newClient();
 		makeExitDroppable();
 		makeCashierDroppable();
+		showPage("splash");
 	}
 )
+function showPage(id) {
+		hideAllPages();
+		var page = $("#" + id);
+		var tweenEnd = {
+						opacity: 1.0
+						};
+		page.animate(tweenEnd,1000);
+		page.show();	
+}
+function hideAllPages() {
+		var pages = $(".page-panel");
+		pages.each(function() {
+			var currentPage = $(this);
+			var hideStyle = {
+				opacity: 0.0,
+				visibility: "visible"
+			};
+			currentPage.css(hideStyle);
+			currentPage.hide();
+		});
+}
 	
 
 
